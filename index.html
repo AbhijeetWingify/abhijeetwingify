@@ -29,9 +29,7 @@ function callbackOnSuccessFunction() {
   console.log("the api is ready !!!");
   console.log("your subscriber Id is");
   console.log(pushcrew.subscriberId);
-  <button onclick="_pcq.push(['triggerOptIn']);">
-GET NOTIFICATIONS
-</button>
+  
 }
 
 function callbackOnFailureFunction(values) {
@@ -50,7 +48,10 @@ function callbackOnFailureFunction(values) {
     
     <p> To meet us more often, please subscribe the blog </p>
     <p> Works? </p>
-    <button type="button">Subscribe</button>
+   
+    <button onclick="_pcq.push(['triggerOptIn']);">
+GET NOTIFICATIONS
+</button>
   </body>
 </html>
     
