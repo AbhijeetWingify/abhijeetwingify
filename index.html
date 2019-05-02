@@ -21,7 +21,7 @@ window._pcq.push(['tag', 'first_name', first_name]);
 </script>
     <script type="text/javascript">
       
-      window._pcq = window._pcq || [];
+    /*  window._pcq = window._pcq || [];
 _pcq.push(['APIReady', callbackOnSuccessFunction,callbackOnFailureFunction]); //will execute callback function when PushCrew API is ready
 
 function callbackOnSuccessFunction() {
@@ -36,7 +36,14 @@ function callbackOnSuccessFunction() {
 function callbackOnFailureFunction(values) {
     console.log("The api is not ready"); 
     console.log(values.reasons);//It will give you the array of reasons why PushCrew API could not get ready .For eg:- ["PRIVATE_BROWSING", "BROWSER_NOT_SUPPORTED"] etc.
-}
+} */
+      
+      window._pcq = window._pcq || [];
+_pcq.push(['subscriptionSuccessCallback',
+           callbackFunctionOnSuccessfulSubscription]); 
+      function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+    console.log('User got successfully subscribed.');
+      }
       
     </script>  
    </head>
