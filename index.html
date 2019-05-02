@@ -29,7 +29,7 @@ function callbackOnSuccessFunction() {
   console.log("the api is ready !!!");
   console.log("your subscriber Id is");
   console.log(pushcrew.subscriberId);
-  if(pushcrew.subscriberId != null)
+  if(pushcrew.subscriberId == true)
     window.location = 'http://www.google.com'; //Will take you to Google.  
 }
 
