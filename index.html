@@ -27,6 +27,19 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');   
 }
     </script>
+    
+    <!-- Failure callback function -->
+    <script type="text/javascript">
+    window._pcq = window._pcq || [];
+_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
+
+function callbackFunctionOnFailedSubscription(values) {
+    console.log('User could not get subscribed to push notifications');
+    console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
+    console.log(values.message)
+    console.log('Now you may run code which should be executed once user subscription fails');
+}
+    </script>
  
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
