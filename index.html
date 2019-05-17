@@ -34,6 +34,7 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 _pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
 
 function callbackFunctionOnFailedSubscription(values) {
+    console.log('Inside failure');
     console.log('User could not get subscribed to push notifications');
     console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
     console.log(values.message)
