@@ -15,6 +15,7 @@
         h.parentNode.insertBefore(s,h);
     })(window,document);
   </script>
+    
 
    
     
@@ -24,9 +25,12 @@
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
 function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+  
+  
     console.log('User got successfully subscribed.');
     console.log(subscriberId); //will output the user's subscriberId
-    console.log('Now you may run code which should be executed once user gets successfully subscribed.');   
+    console.log('Now you may run code which should be executed once user gets successfully subscribed.');
+    alert("Thank you for subscribing");
 }
     </script>
     
