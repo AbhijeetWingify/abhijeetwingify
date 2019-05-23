@@ -45,61 +45,72 @@ function callbackFunctionOnFailedSubscription(values) {
     console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
     console.log(values.message)
     console.log('Now you may run code which should be executed once user subscription fails');
-  curl -H "Authorization: key=1067985753246" --data "title=Testing&message=Hello&url=https://pushcrew.com&subscriber_id=8fd26c69738e48af910fdd95ce042821" https://pushcrew.com/api/v1/send/individual
-
   
-  /** code to send notification to you when someone subscribes
+  // code to send notification to you when someone subscribes
   
-  <?php
-   echo "Inside PHP code";
+ <script language="JavaScript">
 
-    $title = 'Title of Notification';
-    $message = 'Someone new has subscribed';
-    $url = 'https://pushcrew.com'
-    $subscriberId = '8fd26c69738e48af910fdd95ce042821';
+var nl = getNewLine()
 
-    $apiToken = '1067985753246';
+function getNewLine() {
+	var agent = navigator.userAgent
 
-    $curlUrl = 'https://pushcrew.com/api/v1/send/individual/';
-    
-    //set POST variables
-    $fields = array(
-      'title' => $title,
-      'message' => $message,
-      'url' => $url,
-      'subscriber_id' => $subscriberId
-    );
+	if (agent.indexOf("Win") >= 0)
+		return "\r\n"
+	else
+		if (agent.indexOf("Mac") >= 0)
+			return "\r"
 
-    $httpHeadersArray = Array();
-    $httpHeadersArray[] = 'Authorization: key='.$apiToken;
+ 	return "\r"
 
-    //open connection
-    $ch = curl_init();
+}
 
-    //set the url, number of POST vars, POST data
-    curl_setopt($ch, CURLOPT_URL, $curlUrl);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeadersArray);
+pagecode = '<?php'+nl+
+	'   echo "Inside PHP code";'+nl+nl+
+	'    $title = \'Title of Notification\';'+nl+
+	'    $message = \'Someone new has subscribed\';'+nl+
+	'    $url = \'https://pushcrew.com\''+nl+
+	'    $subscriberId = \'8fd26c69738e48af910fdd95ce042821\';'+nl+nl+
+	'    $apiToken = \'1067985753246\';'+nl+nl+
+	'    $curlUrl = \'https://pushcrew.com/api/v1/send/individual/\';'+nl+
+	'    '+nl+
+	'    //set POST variables'+nl+
+	'    $fields = array('+nl+
+	'      \'title\' => $title,'+nl+
+	'      \'message\' => $message,'+nl+
+	'      \'url\' => $url,'+nl+
+	'      \'subscriber_id\' => $subscriberId'+nl+
+	'    );'+nl+nl+
+	'    $httpHeadersArray = Array();'+nl+
+	'    $httpHeadersArray[] = \'Authorization: key=\'.$apiToken;'+nl+nl+
+	'    //open connection'+nl+
+	'    $ch = curl_init();'+nl+nl+
+	'    //set the url, number of POST vars, POST data'+nl+
+	'    curl_setopt($ch, CURLOPT_URL, $curlUrl);'+nl+
+	'    curl_setopt($ch, CURLOPT_POST, true);'+nl+
+	'    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);'+nl+
+	'    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));'+nl+
+	'    curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeadersArray);'+nl+nl+
+	'    //execute post'+nl+
+	'    $result = curl_exec($ch);'+nl+nl+
+	'    $resultArray = json_decode($result, true);'+nl+nl+
+	'    if($resultArray[\'status\'] == \'success\') {'+nl+
+	'        //success'+nl+
+	'        //echo $resultArray[\'request_id\']; //ID of Notification Request'+nl+
+	'    }'+nl+
+	'    else if($resultArray[\'status\'] == \'failure\') {'+nl+
+	'        //failure'+nl+
+	'    }'+nl+
+	'    else {'+nl+
+	'        //failure'+nl+
+	'    }'+nl+nl+
+	'?>'
 
-    //execute post
-    $result = curl_exec($ch);
+document.write(pagecode);
 
-    $resultArray = json_decode($result, true);
-
-    if($resultArray['status'] == 'success') {
-        //success
-        //echo $resultArray['request_id']; //ID of Notification Request
-    }
-    else if($resultArray['status'] == 'failure') {
-        //failure
-    }
-    else {
-        //failure
-    }
-
-?> **/
+</script>
+  
+ 
   
   
 }
