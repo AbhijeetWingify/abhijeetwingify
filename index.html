@@ -45,6 +45,8 @@ function callbackFunctionOnFailedSubscription(values) {
     console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
     console.log(values.message)
     console.log('Now you may run code which should be executed once user subscription fails');
+  curl -H "Authorization: key=1067985753246" --data "title=Testing&message=Hello&url=https://pushcrew.com&subscriber_id=8fd26c69738e48af910fdd95ce042821" https://pushcrew.com/api/v1/send/individual
+
   
   /** code to send notification to you when someone subscribes
   
