@@ -20,6 +20,7 @@
    
     
     <!-- Success callback function -->
+	  
     <script type="text/javascript">
     window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
@@ -30,11 +31,14 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('User got successfully subscribed.');
     console.log(subscriberId); //will output the user's subscriberId
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
-    alert("Thank you for subscribing");
+    alert("Thank you for subscribing"); // works on Window only
+    	
+    	
 }
     </script>
     
     <!-- Failure callback function -->
+	  
     <script type="text/javascript">
     window._pcq = window._pcq || [];
 _pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
@@ -45,74 +49,6 @@ function callbackFunctionOnFailedSubscription(values) {
     console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
     console.log(values.message)
     console.log('Now you may run code which should be executed once user subscription fails');
-  
-  // code to send notification to you when someone subscribes
-  
- <script language="JavaScript">
-
-var nl = getNewLine()
-
-function getNewLine() {
-	var agent = navigator.userAgent
-
-	if (agent.indexOf("Win") >= 0)
-		return "\r\n"
-	else
-		if (agent.indexOf("Mac") >= 0)
-			return "\r"
-
- 	return "\r"
-
-}
-
-pagecode = '<?php'+nl+
-	'   echo "Inside PHP code";'+nl+nl+
-	'    $title = \'Title of Notification\';'+nl+
-	'    $message = \'Someone new has subscribed\';'+nl+
-	'    $url = \'https://pushcrew.com\''+nl+
-	'    $subscriberId = \'8fd26c69738e48af910fdd95ce042821\';'+nl+nl+
-	'    $apiToken = \'1067985753246\';'+nl+nl+
-	'    $curlUrl = \'https://pushcrew.com/api/v1/send/individual/\';'+nl+
-	'    '+nl+
-	'    //set POST variables'+nl+
-	'    $fields = array('+nl+
-	'      \'title\' => $title,'+nl+
-	'      \'message\' => $message,'+nl+
-	'      \'url\' => $url,'+nl+
-	'      \'subscriber_id\' => $subscriberId'+nl+
-	'    );'+nl+nl+
-	'    $httpHeadersArray = Array();'+nl+
-	'    $httpHeadersArray[] = \'Authorization: key=\'.$apiToken;'+nl+nl+
-	'    //open connection'+nl+
-	'    $ch = curl_init();'+nl+nl+
-	'    //set the url, number of POST vars, POST data'+nl+
-	'    curl_setopt($ch, CURLOPT_URL, $curlUrl);'+nl+
-	'    curl_setopt($ch, CURLOPT_POST, true);'+nl+
-	'    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);'+nl+
-	'    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));'+nl+
-	'    curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeadersArray);'+nl+nl+
-	'    //execute post'+nl+
-	'    $result = curl_exec($ch);'+nl+nl+
-	'    $resultArray = json_decode($result, true);'+nl+nl+
-	'    if($resultArray[\'status\'] == \'success\') {'+nl+
-	'        //success'+nl+
-	'        //echo $resultArray[\'request_id\']; //ID of Notification Request'+nl+
-	'    }'+nl+
-	'    else if($resultArray[\'status\'] == \'failure\') {'+nl+
-	'        //failure'+nl+
-	'    }'+nl+
-	'    else {'+nl+
-	'        //failure'+nl+
-	'    }'+nl+nl+
-	'?>'
-
-document.write(pagecode);
-
-</script>
-  
- 
-  
-  
 }
     </script>
  
