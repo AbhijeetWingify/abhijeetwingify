@@ -22,6 +22,9 @@
     <!-- Success callback function -->
 	  
     <script type="text/javascript">
+     if(pushcrew.subscriberId != null)
+	     console.log ( "The user is alreay suscribed");
+	    
     window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
@@ -31,7 +34,10 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('User got successfully subscribed.');
     console.log(subscriberId); //will output the user's subscriberId
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
-    alert("Thank you for subscribing"); // works on Window only
+    
+   // here you need to write the code that would trigger an email on your email address.	
+	
+    alert("Thank you for subscribing"); 
     	
     	
 }
