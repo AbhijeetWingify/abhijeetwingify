@@ -1,50 +1,48 @@
 <?php
-   echo "Inside PHP code";
 
-    $title = 'Title of Notification';
-    $message = 'Someone new has subscribed';
-    $url = 'https://pushcrew.com'
-    $subscriberId = '8fd26c69738e48af910fdd95ce042821';
+   $title = 'Test for PHP server';
+   $message = 'Message of Notification';
+   $url = 'https://www.cricbuzz.com';
 
-    $apiToken = '1067985753246';
+   $apiToken = 'd2ef79c9478d4a9c66ab29c8d30c4ab1';
 
-    $curlUrl = 'https://pushcrew.com/api/v1/send/individual/';
-    
-    //set POST variables
-    $fields = array(
-      'title' => $title,
-      'message' => $message,
-      'url' => $url,
-      'subscriber_id' => $subscriberId
-    );
+   $curlUrl = 'https://pushcrew.com/api/v1/send/all';
 
-    $httpHeadersArray = Array();
-    $httpHeadersArray[] = 'Authorization: key='.$apiToken;
+   //set POST variables
+   $fields = array(
+     'title' => $title,
+     'message' => $message,
+     'url' => $url
+   );
 
-    //open connection
-    $ch = curl_init();
+   $httpHeadersArray = Array();
+   $httpHeadersArray[] = 'Authorization: key='.$apiToken;
 
-    //set the url, number of POST vars, POST data
-    curl_setopt($ch, CURLOPT_URL, $curlUrl);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeadersArray);
+   //open connection
+   $ch = curl_init();
 
-    //execute post
-    $result = curl_exec($ch);
+   //set the url, number of POST vars, POST data
+   curl_setopt($ch, CURLOPT_URL, $curlUrl);
+   curl_setopt($ch, CURLOPT_POST, true);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
+   curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeadersArray);
 
-    $resultArray = json_decode($result, true);
+   //execute post
+   $result = curl_exec($ch);
 
-    if($resultArray['status'] == 'success') {
-        //success
-        //echo $resultArray['request_id']; //ID of Notification Request
-    }
-    else if($resultArray['status'] == 'failure') {
-        //failure
-    }
-    else {
-        //failure
-    }
+   $resultArray = json_decode($result, true);
+
+   if($resultArray['status'] == 'success') {
+       //success
+
+
+   }
+   else if($resultArray['status'] == 'failure') {
+       //failure
+   }
+   else {
+       //failure
+   }
 
 ?>
