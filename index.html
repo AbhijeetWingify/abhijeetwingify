@@ -50,22 +50,13 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 	  
 	  <!-- Email address custom attribute -->
 	  
-	 
-	
 	window._pcq = window._pcq || [];
 	window._pcq.push(['tag', 'email', email_address]);
 	console.log("Inside custom attribute");
-	console.log (email_address);
-
-    	
-    	
+	console.log (email_address);   	
 }
     </script>
-	   <!-- Success callback function -->
-	  
-	  
-	  
-    
+	
     <!-- Failure callback function -->
 	  
     <script type="text/javascript">
@@ -85,15 +76,13 @@ function callbackFunctionOnFailedSubscription(values) {
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134552934-1"></script>
 <script>
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-134552934-1');
-
-	  
-
-    
+</script>   
    </head>
   <body>
     <h1>Welcome </h1>
