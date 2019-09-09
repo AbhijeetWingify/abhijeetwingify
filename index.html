@@ -45,6 +45,7 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     
 		 var name = "Abhijeet";
 		 var e_learning_test;
+		 var e_learning_quote = '';
 		 var email_address = 'abhijeet.singh@wingify.com';
 		 console.log(email_address);
 	  
@@ -62,6 +63,12 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 	window._pcq = window._pcq || [];
 	window._pcq.push(['tag', 'e_learning_test', e_learning_test]);
 	console.log("The value of e_learning_test is " + e_learning_test);
+	
+	
+	window._pcq = window._pcq || [];
+	window._pcq.push(['tag', 'e_learning_quote', e_learning_quote]);
+	console.log("The value of e_learning_quote is " + e_learning_test);
+
 
 }
     </script>
