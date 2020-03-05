@@ -16,86 +16,27 @@
     })(window,document);
 	  </script>
 	  
+	  <script type="text/javascript">
+		  
+		  if(pushcrew.isAPIReady) {
+    		  console.log(pushcrew.subscriberId);
+		  }
+		  
+	  </script>	  
+	  
 	 <script type="text/javascript">
+		  
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134552934-1"></script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-134552934-1');
+	</script>   
 	  
 
     
-    <!-- Success callback function -->
-
-	    
-    window._pcq = window._pcq || [];
-_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
-
-function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
-  
-  
-    console.log('User got successfully subscribed.');
-    console.log(subscriberId); //will output the user's subscriberId
-    console.log('Now you may run code which should be executed once user gets successfully subscribed.');
-    
-   // here you need to write the code that would trigger an email on your email address.	
-	
-    alert("Thank you for subscribing"); 
-
-    
-		 var name = "Abhijeet";
-		 var e_learning_test;
-		 var e_learning_quote = '';
-		 var email_address = 'ajay.singh@wingify.com';
-		 console.log(email_address);
-	  
-	  
-	  <!-- Email address custom attribute -->
-	  
-	window._pcq = window._pcq || [];
-	window._pcq.push(['tag', 'email', email_address]);
-	console.log("Inside custom attribute");
-	console.log (email_address);   
-	PC.evalSegments();
-	console.log("Eval segment called");
-	
-	
-	<!-- Elearning custom attribute -->
-	
-	window._pcq = window._pcq || [];
-	window._pcq.push(['tag', 'e_learning_test', e_learning_test]);
-	console.log("The value of e_learning_test is " + e_learning_test);
-	
-	
-	window._pcq = window._pcq || [];
-	window._pcq.push(['tag', 'e_learning_quote', e_learning_quote]);
-	console.log("The value of e_learning_quote is " + e_learning_quote);
-
-
-}
-    </script>
-	
-    <!-- Failure callback function -->
-	  
-    <script type="text/javascript">
-    window._pcq = window._pcq || [];
-_pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]);
-
-function callbackFunctionOnFailedSubscription(values) {
-    console.log('Inside failure');
-    console.log('User could not get subscribed to push notifications');
-    console.log(values.status); // BLOCKED , UNSUBSCRIBED or CANCELLED
-    console.log(values.message)
-    console.log('Now you may run code which should be executed once user subscription fails');
-}
-    </script>
- 
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134552934-1"></script>
-<script>
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-134552934-1');
-</script>   
+   
+   
    </head>
   <body>
     <h1>Welcome </h1>
